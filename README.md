@@ -8,7 +8,7 @@ A comprehensive traffic forecasting system for predicting traffic peaks at four 
 internship_project/
 ├── src/                    # Backend source code
 │   ├── __init__.py
-│   ├── main.py             # FastAPI application
+│   ├── SmartTrafficForcastingSystem.py  # FastAPI application
 │   ├── data_preprocessing.py
 │   ├── eda.py
 │   ├── forecasting.py
