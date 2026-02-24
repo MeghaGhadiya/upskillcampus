@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Traffic Forecasting Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚦 Smart City Traffic Forecasting Dashboard</h1>
+            <p class="subtitle">Traffic Peak Forecasting System for Government Planners</p>
+        </header>
+
+        <div class="controls">
+            <button id="loadDataBtn" class="btn btn-primary">Load & Preprocess Data</button>
+            <button id="generateEDABtn" class="btn btn-secondary">Generate EDA Plots</button>
+            <button id="trainModelsBtn" class="btn btn-primary">Train Models</button>
+            <button id="generateForecastsBtn" class="btn btn-primary">Generate Forecasts</button>
+            <button id="evaluateModelsBtn" class="btn btn-secondary">Evaluate Models</button>
+            <button id="refreshBtn" class="btn btn-info">Refresh Dashboard</button>
+            <button id="showAllBtn" class="btn btn-info">Show All Sections</button>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <!-- Welcome Instructions -->
+        <section class="welcome-section" id="welcomeSection">
+            <div class="welcome-card">
+                <h2>👋 Welcome to Smart City Traffic Forecasting Dashboard</h2>
+                <p class="welcome-text">Get started by clicking the buttons below in order:</p>
+                <ol class="instructions-list">
+                    <li><strong>Load & Preprocess Data</strong> - Loads and cleans your traffic dataset</li>
+                    <li><strong>Generate EDA Plots</strong> - Creates exploratory data analysis visualizations</li>
+                    <li><strong>Train Models</strong> - Trains forecasting models (takes 5-10 minutes)</li>
+                    <li><strong>Generate Forecasts</strong> - Creates 30-day traffic predictions</li>
+                    <li><strong>Evaluate Models</strong> - Calculates performance metrics (MAE, RMSE, MAPE)</li>
+                    <li><strong>Refresh Dashboard</strong> - Reloads all data and displays results</li>
+                    <li><strong>Show All Sections</strong> - Displays all results at once</li>
+                </ol>
+                <p class="welcome-note">💡 <strong>Tip:</strong> Each button will show only its relevant output section. Use "Show All Sections" to view everything together.</p>
+            </div>
+        </section>
+
+        <!-- Metrics Section -->
+        <section class="metrics-section" style="display: none;">
+            <h2>📊 Model Performance Metrics</h2>
+            <div id="metricsContainer" class="metrics-grid">
+                <div class="instruction-card">
+                    <p>📈 Click <strong>"Evaluate Models"</strong> button to calculate and display performance metrics.</p>
+                    <p>Metrics include: MAE (Mean Absolute Error), RMSE (Root Mean Squared Error), and MAPE (Mean Absolute Percentage Error)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forecasts Section -->
+        <section class="forecasts-section" style="display: none;">
+            <h2>🔮 Traffic Forecasts (Next 30 Days)</h2>
+            <div id="forecastsContainer" class="forecasts-grid">
+                <div class="instruction-card">
+                    <p>🔮 Click <strong>"Generate Forecasts"</strong> button to create 30-day traffic predictions.</p>
+                    <p>Forecasts will be displayed as interactive charts for each junction.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDA Plots Section -->
+        <section class="eda-section" style="display: none;">
+            <h2>📈 Exploratory Data Analysis</h2>
+            <div id="edaContainer" class="eda-grid">
+                <div class="instruction-card" id="edaInstruction" style="grid-column: 1 / -1;">
+                    <p>📊 Click <strong>"Generate EDA Plots"</strong> button to create exploratory data analysis visualizations.</p>
+                    <p>Plots include: Traffic Trends, Working Days vs Holidays, Peak Hours, Seasonal Patterns, and Weekday Patterns</p>
+                </div>
+                <div class="plot-card">
+                    <h3>Traffic Trends</h3>
+                    <img id="trendsPlot" src="" alt="Traffic Trends" class="plot-image">
+                </div>
+                <div class="plot-card">
+                    <h3>Working Days vs Holidays</h3>
+                    <img id="holidaysPlot" src="" alt="Holidays Comparison" class="plot-image">
+                </div>
+                <div class="plot-card">
+                    <h3>Peak Hours</h3>
+                    <img id="peakHoursPlot" src="" alt="Peak Hours" class="plot-image">
+                </div>
+                <div class="plot-card">
+                    <h3>Seasonal Patterns</h3>
+                    <img id="seasonalPlot" src="" alt="Seasonal Patterns" class="plot-image">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
